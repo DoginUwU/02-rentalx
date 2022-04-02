@@ -4,11 +4,14 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
-    "docker:up": "docker-compose up -d",
-    "docker:down": "docker-compose down"
+    "docker:up": "docker-compose up -d --force-recreate",
+    "docker:down": "docker-compose down",
+    "typeorm": "typeorm-ts-node-esm -d src/database/index.ts",
+    "typeorm:migrate": "typeorm migration:create src/database/migrations/"
   },
   "dependencies": {
     "csv-parse": "^5.0.4",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "multer": "^1.4.4",
     "pg": "^8.7.3",
@@ -32,6 +35,7 @@
     "eslint-plugin-import-helpers": "^1.2.1",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.6.1",
+    "ts-node": "^10.7.0",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.3"
   }
