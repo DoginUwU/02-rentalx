@@ -2,6 +2,7 @@ import path from "path";
 import { DataSource } from "typeorm";
 
 import { Category } from "../modules/cars/entities/Category";
+import { Specification } from "../modules/cars/entities/Specifications";
 
 const dataSource = new DataSource({
     type: "postgres",
@@ -12,7 +13,7 @@ const dataSource = new DataSource({
     database: "rentalx",
     synchronize: true,
     migrations: [path.join(__dirname, "migrations", "*.ts")],
-    entities: [Category],
+    entities: [Category, Specification],
 });
 
 dataSource.initialize();

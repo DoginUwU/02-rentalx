@@ -6,8 +6,8 @@
     "dev": "ts-node-dev --poll --inspect --transpile-only --ignore-watch node_modules --respawn ./src/server.ts",
     "docker:up": "docker-compose up -d --force-recreate",
     "docker:down": "docker-compose down",
-    "typeorm": "typeorm-ts-node-esm -d src/database/index.ts",
-    "typeorm:migrate": "typeorm migration:create src/database/migrations/"
+    "typeorm": "typeorm-ts-node-esm",
+    "typeorm:run": "typeorm-ts-node-esm -d src/database/index.ts migration:run"
   },
   "dependencies": {
     "csv-parse": "^5.0.4",
