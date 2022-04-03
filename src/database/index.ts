@@ -1,6 +1,7 @@
 import path from "path";
 import { DataSource } from "typeorm";
 
+import { User } from "../modules/accounts/entities/User";
 import { Category } from "../modules/cars/entities/Category";
 import { Specification } from "../modules/cars/entities/Specifications";
 
@@ -13,7 +14,7 @@ const dataSource = new DataSource({
     database: "rentalx",
     synchronize: true,
     migrations: [path.join(__dirname, "migrations", "*.ts")],
-    entities: [Category, Specification],
+    entities: [Category, Specification, User],
 });
 
 dataSource.initialize();
