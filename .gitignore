@@ -1,5 +1,6 @@
 /node_modules
-/tmp
+/uploads/avatar
+/uploads/tmp
 
 .env
 .env.local

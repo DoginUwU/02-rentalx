@@ -19,6 +19,9 @@ class User {
     @Column()
     password: string;
 
+    @Column({ nullable: true })
+    avatar?: string;
+
     @Column()
     driver_license: string;
 
