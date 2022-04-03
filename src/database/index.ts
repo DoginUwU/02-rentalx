@@ -5,7 +5,7 @@ import { Category } from "../modules/cars/entities/Category";
 
 const dataSource = new DataSource({
     type: "postgres",
-    host: "database",
+    host: "localhost",
     port: 5432,
     username: "docker",
     password: "admin",
