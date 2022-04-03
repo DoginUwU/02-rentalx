@@ -1,3 +1,4 @@
+import { injectable } from "tsyringe";
 import { Repository } from "typeorm";
 
 import dataSource from "../../../../database";
@@ -5,6 +6,7 @@ import { ICreateSpecificationDTO } from "../../dtos/ICreateSpecificationDTO";
 import { Specification } from "../../entities/Specifications";
 import { ISpecificationRepository } from "../ISpecificationsRepository";
 
+@injectable()
 class SpecificationsRepository implements ISpecificationRepository {
     private repository: Repository<Specification>;
 

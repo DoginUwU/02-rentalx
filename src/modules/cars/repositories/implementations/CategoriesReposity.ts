@@ -1,3 +1,4 @@
+import { injectable } from "tsyringe";
 import { Repository } from "typeorm";
 
 import dataSource from "../../../../database";
@@ -5,6 +6,7 @@ import { ICreateCategoryDTO } from "../../dtos/ICreateCategoryDTO";
 import { Category } from "../../entities/Category";
 import { ICategoriesRepository } from "../ICategoriesRepository";
 
+@injectable()
 class CategoriesRepository implements ICategoriesRepository {
     private repository: Repository<Category>;
 
